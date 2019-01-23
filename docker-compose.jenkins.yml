@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  jenkins:
+    build:
+      context: bin/jenkins
+      args:
+        JAVA_OPTS: '-Djenkins.CLI.disabled=true'
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./bin/jenkins/conf:/var/jenkins_conf
+    environment:
+      - CASC_JENKINS_CONFIG=/var/jenkins_conf/jenkins.yaml
+    ports:
+      - "8080:8080"
+      - "50000:50000"
