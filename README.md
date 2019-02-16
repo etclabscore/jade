@@ -5,12 +5,15 @@ Supported by [ETC Labs](https://www.etclabs.org/)
 
 Jade-*
 1. written in any language
-2. exposes json rpc with service discovery
 3. can be run via docker
 4. follows pristine
 5. Includes github pages / generated docs
-6. not dependent on each other (directly).
-7. MUST expose methods via json rpc server
+6. not dependent on each other (directly). <-- Nice to have?
+
+
+Jade-*-rpc
+1. MUST expose functionality provided by Jade-* via json rpc server
+2. exposes json rpc with service discovery
 
 Jade-*-client-{language}
 1. Library that implements a client to use the json rpc service.
