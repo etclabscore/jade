@@ -6,33 +6,32 @@ Supported by [ETC Labs](https://www.etclabs.org/)
 ### Table of Contents
 <!-- TOC depthFrom:1 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [Introduction](#introduction)
 - [Contributing](#contributing)
 - [Definitions](#definitions)
-- [Jade Specification](#jade-specification)
+- [Introduction](#introduction)
    - [What are the goals of Jade](#what-are-the-goals-of-jade)
    - [What influenced the design decisions](#what-influenced-the-design-decisions)
    - [What are the tradeoffs](#what-are-the-tradeoffs)
-   - [What is the architecture of a Jade Project](#what-is-the-architecture-of-a-jade-project)
+- [Jade Specification](#jade-specification)
+   - [Jade Common](#jade-common)
+      - [Jade](#jade)
+      - [Jade-service-runner](#jade-service-runner)
+      - [Jade-ui-{platform}-wrapper](#jade-ui-platform-wrapper)
+   - [An Individual Jade Project Architecture](#an-individual-jade-project-architecture)
+      - [Jade-\*](#jade-\)
+      - [Jade-\*-{language}](#jade-\-language)
+      - [Jade-\*-rpc](#jade-\-rpc)
+      - [Jade-\*-client-{language}](#jade-\-client-language)
+      - [Jade-\*-ui](#jade-\-ui)
    - [Proposed 1.0.0](#proposed-1.0.0)
 
 <!-- /TOC -->
-
-# Introduction
 
 # Contributing
 
 # Definitions
 
-# Jade Specification
-
-1. No code.
-1. Contains the specification of Jade:
-   - what are the goals of the Jade Citadel
-   - What influenced the design decisions 
-   - What are the tradeoffs
-   - What is the architecture of a Jade Project
-
+# Introduction
 
 ## What are the goals of the Jade
 
@@ -40,16 +39,17 @@ Supported by [ETC Labs](https://www.etclabs.org/)
 
 ## What are the tradeoffs
 
-## What is the architecture of a Jade Project
+# Jade Specification
 
 All Projects:
 1. follow pristine
 
 ### Jade Common 
 
-#### Jade-\*
+#### Jade
 
 1. No code, just readme and links to all the goods. This is the first thing you want a google of Jade Etc to see
+1. contains github pages site that would be the root of the projects subdomaining (jade.etclabs.org)
 
 #### Jade-service-runner
 
@@ -65,6 +65,11 @@ All Projects:
 
 ### An Individual Jade Project Architecture
 
+#### Jade-\*
+1. Top level of a project. 
+1. place you want people to see first
+1. contains github pages site that would be the root of the projects subdomaining ({projectname}.jade.etclabs.org)
+
 #### Jade-\*-{language}
 
 1. Exports a package for the language specified by `language`.
@@ -73,7 +78,7 @@ All Projects:
 
 #### Jade-\*-rpc
 
-1. No code - readme indexing the various language implementations of RPC servers. Again, first place you want peoiple to see about RPC server for this project. 
+1. No code - readme indexing the various language implementations of RPC servers. Again, first place you want people to see about RPC server for this project. 
 1.Should define the OpenRPC schema file.
 
 #### Jade-\*-rpc-{language}
