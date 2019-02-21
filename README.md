@@ -4,7 +4,7 @@
 Supported by [ETC Labs](https://www.etclabs.org/)
 
 ### Table of Contents
-<!-- TOC depthFrom:1 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
+<!-- TOC depthFrom:1 depthTo:5 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Contributing](#contributing)
 - [Definitions](#definitions)
@@ -18,11 +18,11 @@ Supported by [ETC Labs](https://www.etclabs.org/)
       - [Jade-service-runner](#jade-service-runner)
       - [Jade-ui-{platform}-wrapper](#jade-ui-platform-wrapper)
    - [An Individual Jade Project Architecture](#an-individual-jade-project-architecture)
-      - [Jade-\*](#jade-\*)
-      - [Jade-\*-{language}](#jade-\-language)
-      - [Jade-\*-rpc](#jade-\-rpc)
-      - [Jade-\*-client-{language}](#jade-\-client-language)
-      - [Jade-\*-ui](#jade-\-ui)
+      - [Jade-{project}](#jade-{project})
+         - [Jade-{project}-{language}](#jade-{project}-{language})
+         - [Jade-{project}-rpc](#jade-{project}-{language})
+            - [Jade-{project}-client-{language}](#jade-{project}-client-{language})
+         - [Jade-{project}-ui](#jade-{project}-ui)
    - [Proposed 1.0.0](#proposed-1.0.0)
 
 <!-- /TOC -->
@@ -53,61 +53,55 @@ All Projects:
 
 #### Jade-service-runner
 
-1. runs any jade-\*  service on any platform
+1. runs any jade-{project} service on any platform
 1. provides a 'meta rpc' or rpc gateway for any services being.
 
 #### Jade-ui-{platform}-wrapper
 
 **note**: `platform` here is one of: 'electron', 'mobile'
 
-1. Anything that takes the web based ui exported by jade-\*-ui and produces a platform specific wrapper for it
+1. Anything that takes the web based ui exported by jade-{project}-ui and produces a platform specific wrapper for it
 1. web application electron wrapper
 
 ### An Individual Jade Project Architecture
 
-#### Jade-\*
+#### Jade-{project}
 1. Top level of a project. 
 1. place you want people to see first
 1. contains github pages site that would be the root of the projects subdomaining ({projectname}.jade.etclabs.org)
 
-#### Jade-\*-{language}
+#### Jade-{project}-{language}
 
 1. Exports a package for the language specified by `language`.
 1. May use a compiled and wrapped build to provide the requisite functions of the project.
 1. Includes github pages / generated docs.
 
-#### Jade-\*-rpc
+#### Jade-{project}-rpc
 
-1. No code - readme indexing the various language implementations of RPC servers. Again, first place you want people to see about RPC server for this project. 
-1.Should define the OpenRPC schema file.
-
-#### Jade-\*-rpc-{language}
-
-1. MUST expose functionality provided by Jade-*-{language} via json rpc server
+1. First place you want people to see about RPC server for this project.
+1. Should define the OpenRPC schema file.
+1. contains github pages site that would be the root of the projects subdomaining ((docs | playground).{projectname}.jade.etclabs.org)
+1. MUST expose functionality provided by Jade-{project}-{language} via json rpc server
 1. exposes json rpc with service discovery
 
-#### Jade-\*-client-{language}
+#### Jade-{project}-client-{language}
 
 1. Library that implements a client to use the json rpc service.
 1. one per language generated
 1. packages are published to package manager based on language of implementation
 
-#### Jade-\*-ui
+#### Jade-{project}-ui
 
 1. UI tailored to dapp users or developers that is built ontop of the json rpc
 1. packaged as web application
-1. uses `Jade-*-client`s
+1. uses `Jade-{project}-client-{language}`s
 
 ## proposed 1.0.0
 
-The first Jade-* projects:
+The first Jade-{project}:
 - Jade-signer
   - Jade-signer-rs
-  - Jade-signer-js 
-    - this is Jade-signer-rs wasm compiled and wrapped in clean & documented js interface.
   - Jade-signer-rpc
-    - Jade-signer-rpc-rs
-    - Jade-signer-rpc-js
   - Jade-signer-client-rs
   - Jade-signer-client-js
   - Jade-signer-ui
@@ -124,8 +118,8 @@ Jade-signer
 1. pretty much only has: account crud, signTransaction, signMessage
 
 Jade-service-runner
-1. runs any jade-\*  service on any platform
+1. runs any jade-{project} service on any platform
 1. provides a 'meta rpc' or rpc gateway for any services being.
 
 Jade-ui-electron-wrapper
-1. takes any jade-\*-ui and wraps it in a platform-specific application wrapper such as electron, cordova, etc.
+1. takes any jade-{project}-ui and wraps it in a platform-specific application wrapper such as electron, cordova, etc.
