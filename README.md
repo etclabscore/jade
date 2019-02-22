@@ -107,7 +107,7 @@ The first Jade-{project}:
   - Jade-signer-ui
 - Jade-evm
   - Jade-evm-rs
-  - Jade-evm-rpc-rs
+  - Jade-evm-rpc
   - Jade-evm-ui ??
 - Jade-ui-electron-wrapper
 - Jade-service-runner
