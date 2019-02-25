@@ -42,7 +42,7 @@ Supported by [ETC Labs](https://www.etclabs.org/)
 # Jade Specification
 
 All Projects:
-1. follow pristine
+1. follow [pristine](https://github.com/etclabscore/pristine)
 
 ### Jade Common 
 
