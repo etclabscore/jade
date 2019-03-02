@@ -56,8 +56,6 @@ All Projects:
 1. runs any jade-{project} service on any platform
 1. provides a 'meta rpc' or rpc gateway for any services being.
 
-#### Jade-ui-{platform}-wrapper
-
 **note**: `platform` here is one of: 'electron', 'mobile'
 
 1. Anything that takes the web based ui exported by jade-{project}-ui and produces a platform specific wrapper for it
@@ -128,6 +126,3 @@ Jade-signer
 Jade-service-runner
 1. runs any jade-{project} service on any platform
 1. provides a 'meta rpc' or rpc gateway for any services being.
-
-Jade-ui-electron-wrapper
-1. takes any jade-{project}-ui and wraps it in a platform-specific application wrapper such as electron, cordova, etc.
