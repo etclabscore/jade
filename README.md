@@ -54,7 +54,8 @@ All Projects:
 #### Jade-service-runner
 
 1. runs any jade-{project}-rpc service on any platform
-1. provides a 'meta rpc' or rpc gateway for any services being.
+1. provides a 'meta rpc' or rpc gateway for any services being. It would be an aggregate of all the jade-{project}s that it is currently running
+1. provides a configuration layer for easily maintaining data directories / named environments. In practice, this would be used for things like dev env that has seperate accounts / chain data / etc
 
 **note**: `platform` here is one of: 'electron', 'mobile'
 
