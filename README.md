@@ -71,7 +71,7 @@ All Projects:
 #### Jade-{project}-{language}
 
 1. Exports a package for the language specified by `language`.
-1. May use a compiled and wrapped build to provide the requisite functions of the project.
+1. May use a compiled and wrapped build to provide the requisite functions of the project. For example, a jade-{project}-js where the js package is really just the jade-{project}-rust crate compiled to wasm and documented / pushed to npm
 1. Includes github pages / generated docs.
 
 #### Jade-{project}-rpc
