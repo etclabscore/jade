@@ -35,6 +35,18 @@ Supported by [ETC Labs](https://www.etclabs.org/)
 
 ## What are the goals of the Jade
 
+The goal of Jade is to enable the creation of decentralized, peer to peer applications built for ethereum classic.
+
+Jade should solve the following problems:
+1. dapp users should have control over their accounts. This means fine grain controls over:
+  - Where the private keys are stored. (local or remote?, via 3rd party service? Hardware?)
+  - When and how the private key may be used to sign transactions/messages.
+1. dapp developers should have uniformly documented interfaces for the blockchain, accounts and all other software required to build dapps. They should use OpenRPC.
+1. dapp developers should have an easy way of deploying their applications. This means reducing scope of concerns, and enabling dapp developers to ignore the problem of where to get blockchain info from, or where the users account lives.
+1. dapps should be able to run nearly anywhere -- browsers, phones, desktops, etc.
+1. dapp users should choose the security model that fits them, not the dapp developer.
+1. dapp users should have tools at their disposal that makes all of the above **easy enough for your grandpa**
+
 ## What influenced the design decisions
 
 ## What are the tradeoffs
