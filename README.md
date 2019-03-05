@@ -53,7 +53,7 @@ All Projects:
 
 #### Jade-service-runner
 
-1. runs any jade-{project} service on any platform
+1. runs any jade-{project}-rpc service on any platform
 1. provides a 'meta rpc' or rpc gateway for any services being.
 
 **note**: `platform` here is one of: 'electron', 'mobile'
