@@ -138,4 +138,4 @@ Jade-signer
 
 Jade-service-runner
 1. runs any jade-{project} service on any platform
-1. provides a 'meta rpc' or rpc gateway for any services being.
+1. provides a 'meta rpc' or rpc gateway for any services.
