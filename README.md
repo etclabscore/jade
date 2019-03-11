@@ -56,7 +56,7 @@ Jade should solve the following problems:
 All Projects:
 1. follow [pristine](https://github.com/etclabscore/pristine)
 
-### Jade Common 
+### Jade Common
 
 #### Jade
 
@@ -77,7 +77,7 @@ All Projects:
 ### An Individual Jade Project Architecture
 
 #### Jade-{project}
-1. Top level of a project. 
+1. Top level of a project.
 1. place you want people to see first
 1. contains github pages site that would be the root of the projects subdomaining ({projectname}.jade.etclabs.org)
 
@@ -119,17 +119,8 @@ The first Jade-{project}:
 - Jade-evm
   - Jade-evm-rs
   - Jade-evm-rpc
-  - Jade-evm-ui ??
 - Jade-ui-electron-wrapper
 - Jade-service-runner
-- Jade-wallet
-
-Jade-wallet
- - web app
- - listens to window.postMessage for ECLIPXXXX spec transaction messages
- - is wrapped in electron protocol handler magico
- - uses a configurable manifest file to hint service runner what to run
- - works without service runner via a default, etclabs supported public service runner (with in mem accounts???)
 
 Jade-signer
 1. lightweight account management that doesn't require ethereum rpc.
