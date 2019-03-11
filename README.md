@@ -118,6 +118,7 @@ The first Jade-{project}:
   - Jade-signer-ui
 - Jade-ui-electron-wrapper
 - Jade-service-runner
+  - Jade-service-runner-ui
 
 Jade-signer
 1. lightweight account management that doesn't require ethereum rpc.
