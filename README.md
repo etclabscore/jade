@@ -69,6 +69,7 @@ All Projects:
 1. provides a 'meta rpc' or rpc gateway for any services being. It would be an aggregate of all the jade-{project}s that it is currently running
 1. provides a configuration layer for easily maintaining data directories / named environments. In practice, this would be used for things like dev env that has seperate accounts / chain data / etc
 
+#### Jade-ui-{platform}-wrapper
 **note**: `platform` here is one of: 'electron', 'mobile'
 
 1. Anything that takes the web based ui exported by jade-{project}-ui and produces a platform specific wrapper for it
