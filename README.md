@@ -114,12 +114,8 @@ The first Jade-{project}:
 - Jade-signer
   - Jade-signer-rs
   - Jade-signer-rpc
-  - Jade-signer-client-rs
-  - Jade-signer-client-js
+  - Jade-signer-rpc-clients
   - Jade-signer-ui
-- Jade-evm
-  - Jade-evm-rs
-  - Jade-evm-rpc
 - Jade-ui-electron-wrapper
 - Jade-service-runner
 
