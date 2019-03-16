@@ -1,0 +1,173 @@
+{
+  "openrpc": "1.0.0-rc1",
+  "info": {
+    "title": "Service Runner",
+    "description": "In a peer-to-peer world there are many services (eg. geth, jade-signer, ipfs) that need to be configured to either build, maintain or consume a Dapp. Management of a full node, configuration, and its peer to peer service dependencies are a manual process. Dapps require extra services, and many Dapps point to 3rd party centralized services like infura because of the friction caused by maintaining multiple services. Users + Developers should be running nodes and services themselves to keep the network decentralized. \n \n Jade Service Runner solves this by providing a well defined, well documented interface to manage these services locally and at scale.",
+    "version": "0.0.1"
+  },
+  "methods": [
+    {
+      "name": "CreateService",
+      "description": "Create service with configuration and name",
+      "params": [
+        {
+          "name": "serviceName",
+          "description": "The service name **MUST** be **UNIQUE** across all services.",
+          "required": true,
+          "summary": "name of the service you want to start",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "configuration",
+          "description": "configuration for the service",
+          "required": true,
+          "summary": "configuration for the service",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "command": {
+                "type": "string"
+              },
+              "host": {
+                "type": "string",
+                "description": "host for service"
+              },
+              "port": {
+                "description": "port number",
+                "type": "string"
+              },
+              "args": {
+                "description": "arguments to pass the service when run",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "Service",
+        "description": "A service result",
+        "schema": {
+          "type": "object"
+        }
+      },
+      "examples": [
+        {
+          "name": "createServiceExample",
+          "description": "Example of a CreatetService method call",
+          "params": [
+            {
+              "name": "serviceNameExample",
+              "description": "`name` of the service you want to create",
+              "value": "jade-signer"
+            },
+            {
+              "name": "configurationExample",
+              "description": "id of the configuration for a service",
+              "summary": "id of the configuration for a service",
+              "value": {
+                "host": "localhost",
+                "port": "9210",
+                "command": "./services/simple-math/bin.cli.js",
+                "args": [
+                  "--datadir=~/Ethereum/classic/simple-math",
+                  "server",
+                  "--host=$host",
+                  "--port=$port"
+                ]
+              }
+            }
+          ],
+          "result": {
+            "name": "jade-signerExample",
+            "value": {
+              "id": "hairy-pickle-banana",
+              "name": "jade-signer",
+              "status": "created",
+              "configuration": {
+                "id": "jade-signer-configuration-dev",
+                "command": "./services/simple-math/bin.cli.js",
+                "args": [
+                  "--datadir=~/Ethereum/classic/simple-math",
+                  "server",
+                  "--host=$host",
+                  "--port=$port"
+                ],
+                "port": "9210",
+                "host": "localhost"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "StartService",
+      "params": [
+        {
+          "name": "serviceId",
+          "summary": "id or name for service to start",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "startServiceResult",
+        "schema": {
+          "type": "object"
+        }
+      },
+      "examples": [
+        {
+          "name": "startServiceExample",
+          "description": "Example of a StartService method call",
+          "params": [
+            {
+              "name": "serviceIdExample",
+              "description": "`id` or `name` of the service you want to start",
+              "value": "jade-signer"
+            }
+          ],
+          "result": {
+            "name": "jade-signerExample",
+            "value": {
+              "id": "hairy-pickle-banana",
+              "name": "jade-signer",
+              "status": "running",
+              "configuration": {
+                "id": "jade-signer-configuration-dev",
+                "command": "./services/simple-math/bin.cli.js",
+                "args": [
+                  "--datadir=~/Ethereum/classic/simple-math",
+                  "server",
+                  "--host=$configuration.host",
+                  "--port=$configuration.port"
+                ],
+                "port": "9210",
+                "host": "localhost"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "StopService",
+      "result": {
+        "name": "stopServiceResult"
+      }
+    },
+    {
+      "name": "ListServices",
+      "result": {
+        "name": "ListServiceResult"
+      }
+    }
+  ]
+}
