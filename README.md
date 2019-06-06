@@ -1,5 +1,9 @@
 # The Jade Specification
 
+<p align="center">
+<img height="256" width="256" src="https://github.com/etclabscore/jade-media-assets/raw/master/jade-logo-light/jade-logo-light%20(PNG)/256x256.png" />
+</p>
+
 ![](https://www.etclabs.org/dist/resources/images/v2/logo-top.png)
 Supported by [ETC Labs](https://www.etclabs.org/)
 
